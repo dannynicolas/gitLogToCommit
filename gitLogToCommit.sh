@@ -1,5 +1,8 @@
 
-while IFS="," read commit_id date message;
+## export your commits to CSV while only retaining the short hash and date
+# git log --author="Your Name" --pretty=format:'%h,%ar' > commits.csv
+
+while IFS="," read commit_id date;
     do
         echo "adding: ${commit_id}" > scratchFile.txt 
         git add . 
